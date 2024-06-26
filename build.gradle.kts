@@ -7,6 +7,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
         jcenter() // Advertencia: este repositorio se cerrará pronto
         maven(url = "https://jitpack.io")
     }
