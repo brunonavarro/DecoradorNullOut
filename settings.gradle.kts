@@ -13,10 +13,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
-        maven{
-            setUrl("https://jitpack.io")
-        }
+        jcenter() // Advertencia: este repositorio se cerrará pronto
+        maven("https://jitpack.io")
     }
 }
 
