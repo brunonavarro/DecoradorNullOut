@@ -1,6 +1,7 @@
 plugins {
     id("java-library")
-    id("org.jetbrains.kotlin.jvm")
+    id("org.jetbrains.kotlin.jvm") //version "1.4.31"
+    id("maven-publish")
 }
 
 java {
@@ -9,10 +10,20 @@ java {
 }
 
 dependencies {
-//    implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("stdlib-jdk8"))
 }
 
-//En caso de que tu version de JDK genere problemas puedes usar este bloque
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+            groupId = "com.github.brunonavarro"
+            artifactId = "DecoradorLib"
+            version = "1.0.0-beta5"
+        }
+    }
+}
+
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
