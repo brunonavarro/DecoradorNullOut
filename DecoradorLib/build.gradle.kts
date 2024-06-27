@@ -19,7 +19,7 @@ publishing {
             from(components["java"])
             groupId = "com.github.brunonavarro"
             artifactId = "DecoradorLib"
-            version = "1.0.0-beta5"
+            version = "1.0.0-beta4"
         }
     }
 }
